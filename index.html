@@ -6,142 +6,151 @@
     <title>AURTIRO | Technical Recruitment</title>
     <style>
         :root {
-            --bg-color: #f8f9fb;      
-            --main-text: #24292e;     
-            --accent-blue: #0366d6;   
-            --muted-text: #6a737d;    
-            --border-color: #e1e4e8;
-            --input-bg: #ffffff;
+            --bg-color: #0d1117;      
+            --main-text: #c9d1d9;     
+            --accent-blue: #58a6ff;   
+            --muted-text: #8b949e;    
+            --border-color: #30363d;
+            --nav-bg: rgba(13, 17, 23, 0.95);
         }
 
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: var(--bg-color);
             font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
             color: var(--main-text);
-        }
-
-        .container {
-            text-align: center;
-            padding: 2rem;
-            max-width: 800px;
-            z-index: 2;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        h1::after {
-            content: "_";
-            color: var(--accent-blue);
-            animation: blink 1s step-end infinite;
-        }
-
-        .description {
-            font-size: 0.95rem;
             line-height: 1.6;
-            color: var(--muted-text);
-            max-width: 550px;
-            margin: 0 auto 2.5rem auto;
+            scroll-behavior: smooth;
         }
 
-        /* Form Styling */
-        .notify-form {
-            display: flex;
-            justify-content: center;
-            gap: 0;
-            max-width: 400px;
-            margin: 0 auto;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-
-        input[type="email"] {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            outline: none;
-            font-family: inherit;
-            font-size: 0.9rem;
-            background: var(--input-bg);
-        }
-
-        button {
-            background: var(--main-text);
-            color: white;
-            border: none;
-            padding: 0 20px;
-            font-family: inherit;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: background 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        button:hover {
-            background: var(--accent-blue);
-        }
-
-        @keyframes blink {
-            from, to { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
+        /* --- UI Chrome (IDE Vibe) --- */
         .line-decoration {
-            position: absolute;
-            left: 20px;
+            position: fixed;
+            left: 0;
             top: 0;
             bottom: 0;
-            width: 30px;
+            width: 40px;
             border-right: 1px solid var(--border-color);
-            padding-top: 20px;
-            color: #d1d5da;
+            background: #090c10;
+            color: #484f58;
             font-size: 12px;
-            user-select: none;
             text-align: right;
             padding-right: 10px;
-            z-index: 1;
+            padding-top: 80px;
+            user-select: none;
+            z-index: 10;
+            overflow: hidden;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .description { font-size: 0.85rem; }
-            .line-decoration { display: none; }
-            .notify-form { flex-direction: column; border: none; }
-            input[type="email"], button { border-radius: 4px; margin-bottom: 10px; border: 1px solid var(--border-color); }
+        .main-content {
+            margin-left: 50px; /* Offset for line numbers */
         }
-    </style>
-</head>
-<body>
 
-    <div class="line-decoration">
-        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12
-    </div>
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 50px;
+            right: 0;
+            height: 60px;
+            background: var(--nav-bg);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
 
-    <div class="container">
-        <h1>AURTIRO</h1>
-        <p class="description">
-            Coming soon. Specialized technical recruitment for elite engineers and high-performance teams. 
-            Analog white-glove staffing for the humans building AI.
-        </p>
+        .logo {
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
 
-        <form class="notify-form" action="mailto:joe@aurtiro.com" method="post" enctype="text/plain">
-            <input type="email" name="Email" placeholder="user@domain.com" required>
-            <button type="submit">Email Us</button>
-        </form>
-    </div>
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
 
-</body>
-</html>
+        .nav-links a {
+            color: var(--main-text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent-blue); }
+
+        .cta-btn {
+            background: var(--main-text);
+            color: var(--bg-color) !important;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .cta-btn:hover { background: var(--accent-blue); color: #fff !important; }
+
+        /* --- Layout Sections --- */
+        section {
+            padding: 100px 2rem 60px 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 1rem; color: #fff; }
+        h1::after { content: "_"; color: var(--accent-blue); animation: blink 1s step-end infinite; }
+        
+        h2 { font-size: 1.5rem; color: #fff; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 0; }
+        h3 { color: var(--accent-blue); font-size: 1.1rem; margin-bottom: 5px; }
+
+        .subtitle { font-size: 1.1rem; color: var(--muted-text); max-width: 600px; margin-bottom: 2rem; }
+
+        /* --- Clients Marquee --- */
+        .marquee-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            background: #090c10;
+        }
+        .marquee {
+            display: inline-block;
+            animation: scroll 40s linear infinite;
+            color: var(--muted-text);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .marquee span { margin-right: 40px; }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* --- Grids & Cards --- */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        
+        .card {
+            background: #090c10;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        blockquote {
+            margin: 0 0 20px 0;
+            padding-left: 15px;
+            border-left: 3px solid var(--accent-blue);
+            font-style: italic;
+            color: #
