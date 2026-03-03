@@ -18,7 +18,7 @@ export function HomePage() {
       <section className="grid gap-8 md:grid-cols-[1.1fr,0.9fr]">
         <div className="animate-riseIn">
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-shell bg-white px-3 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-slate-600">
-            Technical Staffing Platform for AI + Product Teams
+            Technical Staffing Platform for AI + Deployed Engineering Teams
           </p>
           <h1 className="font-display text-4xl font-semibold leading-tight text-ink md:text-6xl">
             Bespoke recruiting for teams that cannot miss on talent.
@@ -55,7 +55,7 @@ export function HomePage() {
         <div className="mb-4 px-6">
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-slate-500">Past Clients Preview</p>
           <p className="mt-2 max-w-3xl text-sm text-slate-600">
-            Trusted by startups and global brands for critical technical hiring across product, platform, and infrastructure teams.
+            Trusted by startups and global brands for critical technical hiring across distributed systems, platform, and infrastructure teams.
           </p>
         </div>
         <div className="overflow-hidden whitespace-nowrap">
