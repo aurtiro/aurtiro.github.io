@@ -8,6 +8,18 @@
       content="Aurtiro is a bespoke technical staffing partner for engineering organizations building at high velocity."
     />
     <title>Aurtiro | Technical Staffing</title>
+    <script>
+      (function restoreSpaPath() {
+        const params = new URLSearchParams(window.location.search);
+        const redirectedPath = params.get('p');
+
+        if (!redirectedPath) {
+          return;
+        }
+
+        window.history.replaceState(null, '', redirectedPath);
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </head>
   <body>
