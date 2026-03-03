@@ -21,7 +21,7 @@ export function HomePage() {
             Technical Staffing Platform for AI + Product Teams
           </p>
           <h1 className="font-display text-4xl font-semibold leading-tight text-ink md:text-6xl">
-            Bespoke recruiting systems for teams that cannot miss on talent.
+            Bespoke recruiting for teams that cannot miss on talent.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-slate-600">
             Aurtiro combines high-context technical recruiting with software-style operating rigor so leaders can hire faster without lowering the bar.
